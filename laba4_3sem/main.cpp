@@ -21,7 +21,7 @@ int main() {
     testAddEdge();
     testShortestPath();
     testStronglyConnectedComponents();
-    DirectedGraph* graph = nullptr; 
+    DirectedGraph<int>* graph = nullptr; 
     int choice;
 
     while (true) {
@@ -40,7 +40,7 @@ int main() {
                 if (graph != nullptr) {
                     delete graph;
                 }
-                graph = new DirectedGraph(vertices);
+                graph = new DirectedGraph<int>(vertices);
                 std::cout << "Граф создан с " << vertices << " вершинами.\n";
                 break;
             }
@@ -151,56 +151,3 @@ int main() {
 
 
 
-
-
-/*
-
-int main() {
-    setlocale(LC_ALL, "Russian");
-    testAddEdge();
-    testShortestPath();
-    testStronglyConnectedComponents();
-
-    //// Создание графа с 5 вершинами
-    //DirectedGraph graph(5);
-
-    //// Добавление рёбер
-    //graph.addEdge(0, 2);
-    //graph.addEdge(2, 1);
-    //graph.addEdge(1, 0);
-    //graph.addEdge(0, 3);
-    //graph.addEdge(3, 4);
-    //graph.addEdge(3, 2);
-    //graph.addEdge(1, 4);
-    //graph.addEdge(3, 1);
-
-    //std::cout << "Граф:\n";
-    //graph.printGraph();
-
-    //// Поиск кратчайшего пути от 0 до 4 других вершин
-    //try {
-    //    Dynamic_Array<int> distances = graph.shortestPath(0, 4);
-    //    std::cout << "\nКратчайшие расстояния от вершины 0:\n";
-    //    for (int i = 0; i < distances.get_colElm(); ++i) {
-    //        if (distances[i] != -1)
-    //            std::cout << "До " << i << ": " << distances[i] << "\n";
-    //        else
-    //            std::cout << "До " << i << ": Нет пути\n";
-    //    }
-    //}
-    //catch (const std::invalid_argument& e) {
-    //    std::cerr << e.what() << "\n";
-    //}
-
-    //// Нахождение компонент сильной связности
-    //Dynamic_Array<Dynamic_Array<int>> scc = graph.stronglyConnectedComponents();
-    //std::cout << "\nКомпоненты сильной связности:\n";
-    //for (int i = 0; i < scc.get_colElm(); i++) {
-    //    for (int j = 0 ; j < scc[i].get_colElm(); j++)
-    //        std::cout << scc[i][j] << " ";
-    //    std::cout << "\n";
-    //}
-
-    return 0;
-}
-*/

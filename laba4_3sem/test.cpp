@@ -4,7 +4,7 @@
 #include "DirectedGraph.h"
 
 void testAddEdge() {
-    DirectedGraph graph(3);
+    DirectedGraph<int> graph(3);
     graph.addEdge(0, 1);
     graph.addEdge(1, 2);
     assert(graph.get_adj()[0].get_colElm() == 1);
@@ -16,7 +16,7 @@ void testAddEdge() {
 }
 
 void testShortestPath() {
-    DirectedGraph graph(5);
+    DirectedGraph<int> graph(5);
     graph.addEdge(0, 1);
     graph.addEdge(1, 2);
     graph.addEdge(0, 3);
@@ -33,7 +33,7 @@ void testShortestPath() {
 }
 
 void testStronglyConnectedComponents() {
-    DirectedGraph graph(5);
+    DirectedGraph<int> graph(5);
     graph.addEdge(0, 1);
     graph.addEdge(1, 2);
     graph.addEdge(2, 0);
